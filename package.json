@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "serve": "ladle serve -p 61000",
+    "build": "ladle build && ladle preview -p 61000",
+    "test:dev": "TYPE=dev pnpm exec playwright test",
+    "test": "pnpm exec playwright test",
+    "test:update": "pnpm exec playwright test -u"
+  },
   "dependencies": {
     "@ladle/react": "^4.0.2",
+    "@playwright/test": "^1.41.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sync-fetch": "^0.5.2"
   }
 }
